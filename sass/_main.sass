@@ -1,0 +1,860 @@
+
+$greencolor : #57c5a0
+$maincolor : #242424
+
+/* 1. MAIN ================== */
+
+//greed
+$gutter: 10
+// $columns: 3
+
+.container
+	max-width: 940px
+	margin-left: auto
+	margin-right: auto
+	padding-left: $gutter + px
+	padding-right: $gutter + px
+	// border: 1px solid red
+	.row
+		margin-left: -$gutter + px
+		margin-right: -$gutter + px
+		+clr
+		// &>[class*="col-"]
+		// 	position: relative
+		// 	min-height: 1px
+		// 	float: left
+		// 	// padding-left: $gutter + px
+		// 	margin-right: $gutter + px
+		// 	box-sizing:border-box
+		// 	border: 1px solid red
+		// 	&:last-child
+		// 		padding-right: 0
+		// 		margin-right: 0
+			
+// @for $i from 1 through $columns
+// 	.col-#{$i}
+// 		width: ((100 / $columns) * $i) * 1%
+		
+// .text-left
+// 	text-align: left !important
+
+// .text-right
+// 	text-align: right !important
+
+
+/* 2. ICONS ================== */
+.ic 
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	background: $icons no-repeat
+
+@each $i in arrow, search
+	.ic-#{$i}
+		+s(icon-#{$i})
+
+
+@each $i in eye,   share , cart, star
+	.ic-#{$i}	
+		+s(icon-#{$i})
+		&:hover 
+			+s(icon-#{$i}-hover)
+@each $i in menu-star, menu-cart 
+	.ic-#{$i}	
+		+s(icon-#{$i})
+	.buy-list li a:hover .ic-#{$i}
+		+s(icon-#{$i}-hover)
+@each $i in facebook, flickr, linkedin ,gplus, twitter
+	.ic-#{$i}	
+		+s(icon-#{$i})
+	.social-link li:hover .ic-#{$i}
+		+s(icon-#{$i}-hover)
+
+/* 2. BUTTON ================== */
+
+
+.btn, a.btn 
+	display: inline-block
+	vertical-align: middle
+	text-align: center
+	padding: 10px 20px 0
+	height: 40px
+	font: normal 14px/14px Arial, sans-serif
+	+tr(all 0.2s linear)
+	border-radius: 5px
+	background: transparent
+	border: none 
+
+input[type="submit"].btn, button.btn
+	padding-top: 0
+
+
+/* 3. FORM ================== */
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+textarea
+	// height: 20px
+	// padding: 0 15px
+	// font: normal 14px/14px Arial, sans-serif
+	// color: #000
+	// background: #fff 
+	// border: 1px solid #ccc
+	// &.form-control
+		// display: block
+		// width: 100%
+
+textarea
+	resize: none 
+	height: auto
+	min-height: 100px
+	padding-top: 10px
+
+label 
+	display: block
+
+
+/* 4. HEADER ================== */
+#header 	
+	background-color: $maincolor
+.header-wrap
+	height: 45px
+	+vertical 
+	& .logo
+		display: inline-block
+		vertical-align: middle
+		& a 
+			display: block
+			color: $greencolor
+			font-size: 26px
+			font-weight: 500
+			line-height: 25px
+			text-transform: uppercase
+			// text-decoration: none
+.search-wrap
+	position: relative
+	display: inline-block
+	float: right
+	#header-searchbox
+		// position: relative
+		// float: right
+	::-webkit-search-cancel-button 
+		-webkit-appearance: none
+	.btn-search 
+		margin: 15px 15px 0 0
+		border: none
+		outline: none
+	.searchbox-input
+		display: none	
+	.searchbox-input ,
+	.search-item
+		color: #b1aeae
+		padding: 13px 1px 13px 13px
+		width: 135px
+		// display: none
+		font-size: 12px
+		font-weight: 400
+		font-family: "Myriad Pro"
+		margin-right: 36px
+		background: transparent
+		border: none
+		border-left : 1px solid #383838		
+		text-transform: uppercase
+		line-height: 19px
+		outline: 0
+	.searchbox-open
+		display: inline-block
+	.searchbox-icon,
+	.searchbox-submit 
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		cursor: pointer
+	.search-list
+		display: none
+		position: absolute
+		background-color: #4c4c4c
+		z-index: 2
+		.search-item
+			margin: 0
+			width: 172px
+			padding: 10px 15px
+			border : solid #818181
+			border-width : 0 1px
+			border-bottom: 1px solid #666464
+			cursor: pointer
+			&:hover
+				color: $greencolor
+			// LOGIN or REGISTER style 
+.btn-login
+	display: inline-block
+	float: right
+	padding : 10px 23px
+	color: #7e7e7e
+	font-size: 11px
+	font-weight: 400
+	line-height: 25px
+	border : solid #383838
+	border-width : 0 1px
+	cursor: pointer
+	text-transform: uppercase
+	& span 
+		text-transform: lowercase
+	&:hover
+		color: #c7c7c7
+		text-decoration: underline	
+
+.overlay
+	display: none
+	position: fixed
+	z-index: 99
+	opacity: 0.5
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: #000
+.login-register-popup
+	display: none
+	position: fixed
+	z-index: 999
+	background: #2e2e2e
+	width: 300px
+	height: 325px
+	padding: 5px 15px
+	font-size: 14px
+.close-popup
+	position: relative
+	display: inline-block
+	float: right
+	margin-top: 10px
+	width: 20px
+	height: 20px
+	overflow: hidden
+	cursor: pointer 
+	&:before, &:after
+		content: ' '
+		position: absolute
+		height: 2px
+		width: 100px
+		width: 100%
+		top: 50%
+		left: 0
+		margin-top: -1px
+		background-color: #7e7e7e
+	&:after
+		transform: rotate(-45deg)
+	&:before
+		transform: rotate(45deg)
+	&:hover:before,
+	&:hover:after
+		background-color: #FFF	
+.login-register-tabs
+	margin-top: 15px
+	clear: both
+	text-align: center
+	.tab-item
+		color: #7e7e7e
+		margin: 0 10px
+		cursor: pointer 
+		&.active
+			color: #fff
+		&:hover
+			color: #fff	
+	.tab-content 
+		margin-top: 20px
+		
+.input-wrap
+	display: block
+	width: 100%
+	margin-bottom: 15px
+
+.input-item
+	position: relative
+	padding: 6px 
+	width: 100%
+	outline: none
+	border: solid 1px #7e7e7e
+	box-sizing: border-box
+	color: #fff
+	font-size: 14px
+	line-height: 22px
+	background: transparent
+	resize: vertical
+	-webkit-transition: all .2s ease
+	transition: all .2s ease
+.label-item
+	position: relative
+	display: block
+	width: 100%
+	box-sizing: border-box
+	&.active
+		.placeholder
+			top: -6px
+			color: #989b9c
+			font-size: 11px
+			line-height: 14px
+			-webkit-transform: translate(10px, 0)
+			transform: translate(10px, 0)
+		.input-item ~ .placeholder
+			color: #fff
+			padding: 0 6px
+			background: #2e2e2e
+.input-item:focus
+	border-color: #fff
+
+.input-wrap .placeholder
+	position: absolute
+	top: 50%
+	display: block
+	padding: 0 10px
+	color: #fff
+	white-space: nowrap
+	font-size: 14px
+	-webkit-transition: all, .4s
+	transition: all, .4s
+	-webkit-transform: translateY(-50% )
+	transform: translateY(-50% )
+	pointer-events: none
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+.btn-send
+	color: #7e7e7e
+	height: 32px
+	padding: 0 20px
+	border: 1px solid #7e7e7e
+	border-radius: 0px
+	text-transform: uppercase
+	&:hover
+		color: #fff
+		border-color: #fff
+.forgot-password
+	display: block
+	color: #7e7e7e
+	margin-top: 20px
+	&:hover
+		color: #fff
+#menu
+	background: #fff
+#nav
+	ul li	
+		display: inline-block
+		padding: 21px 
+		border-right: 1px solid #eee
+		list-style-type: none
+		&:first-child
+			border-left: 1px solid #eee
+	& .nav-list
+		float: left
+		height: 60px
+		& li 
+			& a 
+				color: $maincolor 
+				font-size: 16px
+				font-weight: 400
+				line-height: 19px
+				cursor: pointer
+				&:hover 
+					color: $greencolor
+			& .active 
+				color: $greencolor		
+	& .buy-list
+		float: right
+		li:last-child
+			// position: fixed
+			border-right: 0px
+		& .wish-list 
+			color: #000
+		& span 
+			color: #fff
+			display: inline-block
+			margin-left: 3px
+			min-width: 20px
+			min-height: 20px
+			padding: 4px
+			background: #adadad
+			border-radius: 4px
+			text-align: center
+			font-size: 12px
+			font-weight: 700
+		& .cart
+			& span
+				background: $greencolor
+
+
+/* 5. CONTENT ================== */
+
+
+
+
+/* slider. ================== */
+#top-slider
+	position: relative
+	min-height: 460px
+	background: url('../img/bg-top-slider.png') no-repeat
+.slider-item
+	// width: 50%
+	position: relative
+	
+	& img
+		display: block
+		width: 100%
+		height: auto
+	// & .container
+	// 	position: absolute
+	// 	top: 0
+	// 	bottom: 0
+	// 	left: 50%
+	// 	width: 100%
+	// 	-ms-transform: translate(-50%,0)
+	// 	transform: translate(-50%,0)
+.slider-text
+	max-width: 386px
+	height: 400px
+	position: absolute
+	top: 50%
+	right: 5%
+	color: $maincolor
+	font-family: Aller
+	margin-top: -200px	
+	// transform: translate(0, -50%)
+	// -webkit-transform: translate(0, -50%)
+
+	& .title-text
+		color: #242424
+		font-size: 40px
+		font-weight: 300
+		line-height: 40px	
+	& .description-slider 
+		margin: 4px 0 20px
+		font-size: 20px
+		font-weight: 300
+		line-height: 25px	
+.slider-price
+	display: inline-block
+	width: 68px
+	color: #fff
+	margin: 0 0 13px
+	padding:  26px 8px
+	font-size: 13px
+	text-align: center
+	background: $greencolor			
+.action-menu li 
+	display: inline-block
+	margin-right: 2px
+	width: 40px
+	height: 40px
+	background: #fff
+	text-align: center
+	+vertical
+
+.navigation
+	background: #2e2e2e
+	overflow: hidden
+	& ul 
+		position: relative
+		max-width: 572px
+		padding: 0 5px
+		overflow: hidden
+		margin: 0 auto
+		text-align: center
+		z-index: 1
+		&:after
+			position: absolute
+			top: 6px
+			left: 0
+			width: 100%
+			height: 10%
+			background-color: #000
+			z-index: -1
+			content: ' '
+		& li 
+			float: left
+			position: relative
+			width: 33.33%
+			padding : 0 5px
+			box-sizing: border-box
+			&:first-child:after
+				display: none
+			&:after	
+				content: ''
+				position: absolute
+				top: 8px
+				left: -1px
+				background: #2e2e2e
+				width: 2px
+				height: 6px
+	& span
+		position: relative
+		display: block
+		color: #adadad
+		font-size: 12px
+		line-height: 14px
+		padding: 30px 5px 23px
+		// text-decoration: none
+		cursor: pointer
+		&:hover strong
+			color: #fff
+		& strong 
+			display: block
+			color: #acacac
+			margin: 0 0 3px
+			font-size: 18px
+			line-height: 20px
+						
+
+	& .slick-active span:after 
+		content: ''
+		position: absolute
+		background: #57c5a0
+		width: 100%
+		left: 0
+		top: 8px
+		height: 6px
+	& .slick-active 
+		strong 
+			color: #fff
+
+/* section special-offers ================== */
+#special-offers 
+	background: $maincolor
+	padding:  25px 0
+	& .offers-item
+		width: 31.7%
+		display: inline-block
+		margin-right: 2%
+		&:last-child
+			margin-right: 0
+	& .offers-item a
+		display: block
+		position: relative
+		text-align: center
+		span
+			position: absolute
+			display: block
+			color: #fff
+			padding : 16px 20px
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			-webkit-transform: translate(-50%, -50%)
+			font-size: 25px
+			font-weight: 300
+			text-transform: uppercase
+			background-color: rgba(36, 36, 36, 0.9)
+			white-space: nowrap
+			&:hover 
+				background: rgba(0, 0, 0, 0.61)
+				transition: all 0.3s ease-in-out
+/* catalog ================== */
+#catalog
+	color: $maincolor
+	font-family: Aller, sans-serif
+	background: #ebe7df
+.products-content
+	& .products-title
+		padding: 30px 0
+		// overflow: hidden
+		& h2
+			display: inline-block
+			padding-top: 10px
+			font-size: 25px
+			font-weight: 300
+		& .btn-all
+			float: right		
+			color: #bcb5a7
+			padding: 12px 20px
+			font-size: 14px
+			font-weight: 700
+			border: 1px solid #bcb5a7
+			border-radius: 0 
+.product-list 
+	overflow: hidden
+	& .product-item
+		position: relative
+		width: 31.915%
+		float: left
+		display: block
+		margin: 0 2.129% 20px 0
+		background: #fff
+		overflow: hidden
+		&:last-child
+			margin-right: 0
+		& img 
+			display: block		
+			margin: 0 auto
+.product-details
+	position: relative
+	min-height: 48px
+	padding-left: 90px
+	border-top: 1px solid #ccc
+	background: #fff
+	& .slider-price
+		position: absolute
+		bottom: 0
+		left: 10px
+		margin: 0
+	& .product-title
+		color: $maincolor
+		font-size: 18px
+		line-height: 20px
+		font-weight: 400
+		padding : 10px 0 0 0
+	& .action-menu
+		display: none	
+	
+.product-sale
+	position: absolute
+	width: 68px
+	height: 68px
+	top: 0
+	right: 13px
+	text-align: center
+	background-color: $maincolor
+	+vertical
+	// font-size: 13px
+	&.stock
+		// +vertical
+		background-color: #f27e4b
+	& span
+		display: inline-block
+		color: #fff
+		font-size: 13px
+		font-weight: 700
+		line-height: 18px
+		text-transform: uppercase
+		vertical-align: middle
+.product-item:hover .product-details .action-menu
+	display: block	
+.product-item:hover .product-title
+	display: none
+
+
+
+.post-content
+	margin: 30px 0
+	padding: 25px 0
+	border-top: 1px solid #bcb5a7
+	overflow: hidden
+	& .post-item
+		min-height: 185px
+		float: left
+		width: 23.5%
+		color: $maincolor
+		margin-right: 2%
+		padding: 32px 27px 0 15px
+		background-color: rgba(0, 0, 0, 0.05)
+		&.post-large
+			width: 49%
+			margin-right: 0	
+		& .post-title
+			margin-bottom: 15px
+			font-size: 14px
+			font-weight: 700
+			// line-height: 60px
+			text-transform: uppercase	
+		& p	
+			font-size: 12px
+			font-weight: 400
+			line-height: 15px
+		& .post-author
+			display: block
+			font-size: 12px
+			margin-top: 10px
+			font-style: italic
+	& .news-item
+		+clr
+		margin-bottom: 15px
+		.news-date
+			// display: inline-block
+			float: left
+			color: #fff
+			width: 36px
+			height: 36px
+			margin-right: 10px
+			padding: 6px 8px
+			font-size: 10px
+			line-height: 12px
+			text-align: center
+			vertical-align: middle
+			font-weight: 700
+			background-color: #57c5a0
+
+			& .news-day	
+				display: block
+				font-size: 13px	
+
+/* widget ================== */
+#widget
+	color: #a4a4a4
+	border-bottom: 1px solid  #1c1c1c
+	background: $maincolor
+
+.widgets-wrap,
+.social-wrap
+	margin-bottom: 30px
+	padding: 50px 40px 10px 40px
+	overflow: hidden
+.widget-item
+	float: left
+	margin-right: 6.629%
+	width: 29.187%
+	&.widget-flickr
+		width: 28.373%
+		margin-right: 0
+	& .widget-title 
+		color: #7d7d7d
+		margin-bottom: 20px
+		font-size: 14px
+		font-weight: 400
+		line-height: 18px
+		text-transform: uppercase
+	& p 
+		color: #a4a4a4
+		font-size: 12px
+		font-style: italic
+		line-height: 16px	
+		& .twitter-posted
+			color: #57c5a0
+			&:hover
+				text-decoration: underline
+	& .twitter-date
+		display: block
+		color: #c4c5bf
+		margin: 10px 0
+		font-size: 12px
+		font-style: italic
+		line-height: 18px
+				
+	& .flickr-item
+		float: left
+		width: 30.3%
+		margin: 0 2.7% 9px 0
+		& img
+			display: block
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .col-1
+// 	float: left
+// 	width: 251px
+// 	margin-right: 53px
+// 	border: 1px solid #fff
+// 	box-sizing: border-box
+// .col-1:last-child
+// 	margin-right: 0
+// .col-2
+// 	width: 244px	
+
+/* social ================== */
+#social
+	min-height: 100px
+	background: $maincolor
+
+#mail-form
+	display: inline-block	
+	& .mail-field
+		float: left 
+		color: #7d7d7d
+		width: 215px
+		min-height: 36px
+		padding: 5px 0 5px 15px
+		font-style: italic
+		border: 1px solid transparent
+		outline: none
+		background: #2e2e2e
+		&::placeholder
+			color: #7d7d7d
+			font-family: Aller
+			font-size: 12px
+			font-style: italic
+			line-height: 18px
+		&:focus
+			border: 1px solid #7d7d7d	
+			border-right: 0px
+	& .mail-btn
+		width: 36px
+		height: 36px
+		// padding: 0
+		border: none
+		// margin-left: -39px
+		background: #7d7d7d	
+.social-link
+	float: right
+	& li
+		float: left
+		margin-right: 8px
+		text-align: center
+		& a
+			display: block
+			width: 36px
+			height: 36px
+			+vertical
+			background: #2e2e2e
+			&:hover
+				background: #7e7e7e
+			& i 
+				display: inline-block
+				vertical-align: middle
+
+/* 6. FOOTER ================== */
+#footer 
+	padding: 30px 0
+	background: #2e2e2e
+	& .copyright
+		float: left
+		& p
+			opacity: 0.5
+			color: #fff
+			font-size: 12px
+			font-weight: 400
+			line-height: 18px
+.footer-nav
+	display: inline-block
+	float: right
+	& li 
+		float: left
+		margin-right: 5px
+		color: #acacac
+		// opacity: 0.5
+		font-size: 12px
+		font-weight: 400
+		line-height: 25px
+		& a
+			color: #fff
+			opacity: 0.5
+			padding-right: 5px
+			-webkit-transition: none
+			-moz-transition: none
+			-o-transition: none
+			transition: none
+			&:hover
+				color: $greencolor
+				opacity: 1
+				text-decoration: underline
+
+
+/* 7. MEDIA ================== */
+
+
+
+
+
