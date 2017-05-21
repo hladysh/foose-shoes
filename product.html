@@ -73,7 +73,10 @@
 								</form>
 							</div>
 						</div>
+
 					</div>
+
+
 					<div class="search-wrap">
 						<form id="header-search">
 							<input type="search" name="search" id="search" class="searchbox-input" placeholder="Search">
@@ -84,6 +87,7 @@
 								<li class="search-item">Kids</li>
 							</ul>
 						</form>
+
 					</div>
 				</div>
 			</div>
@@ -93,13 +97,14 @@
 				<div class="row">
 					<nav id="nav">
 						<ul class="nav-list">
-							<li class="nav-item"><a href="index.html" class="active">Home</a></li>
-							<li class="nav-item"><a href="product.html">Products</a></li>
+							<li class="nav-item"><a href="index.html" >Home</a></li>
+							<li class="nav-item"><a href="product.html" class="active">Products</a></li>
 							<li class="nav-item"><a href="#">About</a></li>
 							<li class="nav-item"><a href="#">Pages</a></li>
 							<li class="nav-item"><a href="#">Blog</a></li>
 							<li class="nav-item"><a href="#">Contact</a></li>
 						</ul>
+
 						<div id="nav-toggle" class="nav_slide_button"><span class="nav-arrow"></span></div>
 						<ul class="buy-list"> 
 							<li class="buy-list-item">
@@ -123,74 +128,44 @@
 	<!-- HEADER END -->
 
 	<!-- CONTENT -->
-	<section id="top-slider">
-		<div class="slider-top">
-			<div>
-				<div class="slider-item">
-					<img src="img/slider-img.png" alt="alt img" class="slider-img-big">
-					<img src="img/slider-img-small.png" alt="alt img" class="slider-img-small">
-
-				</div>
-			</div>	
-			<div>
-				<div class="slider-item">
-					<img src="img/slider-img-2.jpg" alt="alt img" class="slider-img-big">
-					<img src="img/slider-img-2-small.jpg" alt="alt img" class="slider-img-small">
-				</div>
-			</div>	
-			<div>
-				<div class="slider-item">
-					<img src="img/slider-img-3.jpg" alt="alt img" class="slider-img-big">
-					<img src="img/slider-img-3-small.jpg" alt="alt img" class="slider-img-small">
-				</div>
-			</div>		
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="baner-top">
-					<span class="baner-price">$145,99</span>
-					<h2 class="baner-text">Pink Shoes <br>2013 Collection</h2>
-					<p class="baner-description ">Nunc non fermentum nunc. Sed ut ante eget leo tempor consequat sit amet eu  orci. Donec dignissim dolor eget..</p>
-					<ul class="action-menu">
-						<li class="action-item"><a href="#" class="ic ic-eye"></a></li>
-						<li class="action-item"><a href="#" class="ic ic-star"></a></li>
-						<li class="action-item"><a href="#" class="ic ic-share"></a></li>
-						<li class="action-item"><a href="#" class="ic ic-cart"></a></li>
-					</ul>
+	<section id="baner-product">
+		<div class="baner-details">
+			<div class="container">
+				<div class="row">
+					<div class="baner-top">
+						<span class="baner-price">$145,99</span>
+						<h2 class="baner-text">Pink Shoes <br>2013 Collection</h2>
+						<p class="baner-description">Nunc non fermentum nunc. Sed ut ante eget leo tempor consequat sit amet eu  orci. Donec dignissim dolor eget..</p>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="navigation">
-			<ul class="navigation-list">
-				<li class="navigation-item slick-active"><span><strong>Pink Shoes</strong>Now af $145,99</span></li>
-				<li class="navigation-item"><span><strong>Anna Field</strong>Limited Edition</span></li>
-				<li class="navigation-item"><span><strong>Prada</strong>Summer is coming</span></li>
-			</ul>
-
-		</div>
 	</section>
-	<section id="special-offers">
+	<section id="shop-catalog">
 		<div class="container">
 			<div class="row">
-				<div class="offers-item">
-					<a href="#">
-						<img src="img/offers-1.jpg" alt="on sale">
-						<span>on sale</span>
-					</a>
-				</div>
-				<div class="offers-item">
-					<a href="#">
-						<img src="img/offers-2.jpg" alt="special offers">
-						<span>special offers</span>
-					</a>
+				<h2 class="catalog-title">Shop by</h2>
+				<select class="catalog-select brands ">
+					<option hidden>Brands</option>
+					<option value="nike">Nike</option>
+					<option value="roxy">roxy</option>
+					<option value="skechers">Skechers</option>
+				</select>
+				<select class="catalog-select categories">
+					<option hidden>Categories</option>
+					<option value=">men shoes">Men Shoes</option>
+					<option value="kids">Kids</option>
+					<option value="women shoes">Women shoes</option>
+					<option value="t-shirt">t-shirt</option>
+				</select>
+				<select class="catalog-select price">
+					<option hidden>Price</option>
+					<option value="10 to 99">10 to 99</option>
+					<option value="100 to 199">100 to 199</option>
+					<option value="200 to 299">200 to 299</option>
+					<option value="300 to 500">300 to 500</option>
+				</select>
 
-				</div>
-				<div class="offers-item">
-					<a href="#">
-						<img src="img/must-have.jpg" alt="must have">
-						<span>must have</span>
-					</a>
-				</div>
 			</div>
 		</div>
 	</section>
@@ -199,10 +174,34 @@
 			<div class="row">
 				<div class="products-content">
 					<div class="title-box">
-						<h2 class="catalog-title">New arrivals on FooseShoes</h2>
-						<a href="product.html" class="btn btn-all">Show All</a>
+						<h2 class="catalog-title">All Products</h2>
+						<ul class="breadcrumbs-block">
+							<li class="breadcrumbs-list">
+								<a href="#" class="breadcrumbs-item">Home</a>
+							</li>
+							<li class="breadcrumbs-list">
+								<a href="#" class="breadcrumbs-item">All Products</a>
+							</li>
+						</ul>
+
+						<div class="view-bloc">
+							<span class="title-view">View as</span>
+							<button class="view-button view-greed ">
+								<i class="ic ic-greed"></i>
+							</button>
+							<button class="view-button view-line ">
+								<i class="ic ic-lines"></i>
+							</button>
+							<select class="sort-product">
+								<option hidden>Sort alphabetically</option>
+								<option value="price">Price</option>
+								<option value="popularity">Popularity</option>
+								<option value="high">price high</option>
+								<option value="low">price low</option>
+							</select>
+						</div>
 					</div>
-					<ul class="product-list">
+					<ul class="product-list product-page">
 						<li class="product-item">
 							<img src="img/products-1.jpg" alt="shoes 1 alt ">
 							<div class="product-details">
@@ -245,14 +244,6 @@
 								</ul>
 							</div>					
 						</li>
-					</ul>
-				</div>
-				<div class="products-content">
-					<div class="title-box">
-						<h2 class="catalog-title">Best sellers of the month</h2>
-						<a href="product.html" class="btn btn-all">Show All</a>
-					</div>
-					<ul class="product-list">
 						<li class="product-item">
 							<img src="img/products-1.jpg" alt="shoes 1 alt ">
 							<div class="product-details">
@@ -295,8 +286,49 @@
 								<span>out of stock</span>
 							</div>				
 						</li>
+						<li class="product-item">
+							<img src="img/products-1.jpg" alt="shoes 1 alt ">
+							<div class="product-details">
+								<span class="product-price">$145,99</span>
+								<h3 class="product-title">Even&Odd</h3>
+								<ul class="action-menu">
+									<li class="action-item"><a href="#" class="ic ic-eye"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-star"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-share"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-cart"></a></li>
+								</ul>
+							</div>					
+						</li>
+						<li class="product-item">
+							<img src="img/products-1.jpg" alt="shoes 1 alt ">
+							<div class="product-details">
+								<span class="product-price">$145,99</span>
+								<h3 class="product-title">Even&Odd</h3>
+								<ul class="action-menu">
+									<li class="action-item"><a href="#" class="ic ic-eye"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-star"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-share"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-cart"></a></li>
+								</ul>
+							</div>					
+						</li>
+						<li class="product-item">
+							<img src="img/products-1.jpg" alt="shoes 1 alt ">
+							<div class="product-details">
+								<span class="product-price">$145,99</span>
+								<h3 class="product-title">Even&Odd</h3>
+								<ul class="action-menu">
+									<li class="action-item"><a href="#" class="ic ic-eye"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-star"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-share"></a></li>
+									<li class="action-item"><a href="#" class="ic ic-cart"></a></li>
+								</ul>
+							</div>					
+						</li>
 					</ul>
+
 				</div>
+
 				<div class="post-content">
 					<div class="post-item shipping">
 						<h4 class="post-title">Free Shipping</h4>
@@ -344,9 +376,6 @@
 							<p><a href="#" class="twitter-posted">roymarvelous </a> You can seek a refund through TF if it is not as advertised - but it is :) </p>
 							<span class="twitter-date">21 days ago</span>
 						</div>
-						<!-- <a class="twitter-timeline"  href="https://twitter.com/search?q=roymarvelous%20" data-widget-id="861859030649753600">Твіти про roymarvelous </a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
-
 					</div>
 					<div class="widget-item widget-flickr">
 						<h4 class="widget-title">FLICKR WIDGET</h4>
@@ -400,59 +429,60 @@
 						<li>
 							<a href="https://www.facebook.com/"  target="_blank">
 								<i class="ic ic-facebook"></i>
-							</a></li>
-							<li>
-								<a href="https://twitter.com" target="_blank">
-									<i  class="ic ic-twitter" ></i>
-								</a>
-							</li>
-							<li>
-								<a href="https://plus.google.com" target="_blank">
-									<i class="ic ic-gplus"></i>
-								</a>
-							</li>
-							<li>
-								<a href="https://www.linkedin.com" target="_blank">
-									<i class="ic ic-linkedin"></i>
-								</a>
-							</li>
-							<li>
-								<a href="http://coderiver.com" target="_blank">
-									<i class="ic ic-flickr"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- CONTENT END -->
-
-		<!-- FOOTER -->
-		<footer id="footer">
-			<div class="container">
-				<div class="row">
-					<ul class="footer-nav">
-						<li class="nav-item"><a href="#">Home</a>/</li>
-						<li class="nav-item"><a href="">Support</a>/</li>
-						<li class="nav-item"><a href="">Terms and Conditions</a>/</li>
-						<li class="nav-item"><a href="">Faqs</a>/</li>
-						<li class="nav-item"><a href="">Contact us</a></li>			
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com" target="_blank">
+								<i  class="ic ic-twitter" ></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://plus.google.com" target="_blank">
+								<i class="ic ic-gplus"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com" target="_blank">
+								<i class="ic ic-linkedin"></i>
+							</a>
+						</li>
+						<li>
+							<a href="http://coderiver.com" target="_blank">
+								<i class="ic ic-flickr"></i>
+							</a>
+						</li>
 					</ul>
-					<div class="copyright">
-						<p >Copyright &copy; Fooseshoes 2013.</p> <p> Designed by EnzoLiVolti. </p>
-					</div>
-
 				</div>
 			</div>
-		</footer>
-		<!-- FOOTER END -->
+		</div>
+	</section>
+	<!-- CONTENT END -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<ul class="footer-nav">
+					<li class="nav-item"><a href="#">Home</a>/</li>
+					<li class="nav-item"><a href="">Support</a>/</li>
+					<li class="nav-item"><a href="">Terms and Conditions</a>/</li>
+					<li class="nav-item"><a href="">Faqs</a>/</li>
+					<li class="nav-item"><a href="">Contact us</a></li>			
+				</ul>
+				<div class="copyright">
+					<p >Copyright &copy; Fooseshoes 2013.</p> <p> Designed by EnzoLiVolti. </p>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER END -->
 
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/slick.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
-		<script type="text/javascript" src="js/custom.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
 
-	</body>
-	</html>
+</body>
+</html>

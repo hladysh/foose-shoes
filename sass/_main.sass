@@ -9,12 +9,12 @@ $gutter: 10
 // $columns: 3
 
 .container
-	max-width: 940px
+	width: 940px
 	margin-left: auto
 	margin-right: auto
 	padding-left: $gutter + px
 	padding-right: $gutter + px
-	// border: 1px solid red
+	// border: 1px solid green
 	.row
 		margin-left: -$gutter + px
 		margin-right: -$gutter + px
@@ -49,26 +49,63 @@ $gutter: 10
 	vertical-align: middle
 	background: $icons no-repeat
 
-@each $i in arrow, search
+@each $i in arrow, catalog, 
 	.ic-#{$i}
 		+s(icon-#{$i})
 
 
-@each $i in eye,   share , cart, star
+@each $i in eye,   share , cart, star, menu-star, menu-cart , search
 	.ic-#{$i}	
 		+s(icon-#{$i})
 		&:hover 
 			+s(icon-#{$i}-hover)
-@each $i in menu-star, menu-cart 
+
+@each $i in  greed , lines
 	.ic-#{$i}	
 		+s(icon-#{$i})
-	.buy-list li a:hover .ic-#{$i}
+	.view-button:hover .ic-#{$i}
 		+s(icon-#{$i}-hover)
+// @each $i in menu-star, menu-cart 
+// 	.ic-#{$i}	
+// 		+s(icon-#{$i})
+// 	.buy-list li a:hover .ic-#{$i}
+// 		+s(icon-#{$i}-hover)
+
 @each $i in facebook, flickr, linkedin ,gplus, twitter
 	.ic-#{$i}	
 		+s(icon-#{$i})
 	.social-link li:hover .ic-#{$i}
 		+s(icon-#{$i}-hover)
+
+
+
+
+input:-webkit-autofill
+	border: 1px solid #7e7e7e
+	-webkit-text-fill-color: #7d7d7d
+	-webkit-box-shadow: 0 0 0px 100px #2e2e2e inset
+	&:hover, &:focus input:-webkit-autofill
+		border: 1px solid #7e7e7e
+		-webkit-text-fill-color: #7d7d7d
+		-webkit-box-shadow: 0 0 0px 100px #2e2e2e inset
+
+textarea:-webkit-autofill
+	border: 1px solid #7e7e7e
+	-webkit-text-fill-color: #7d7d7d
+	-webkit-box-shadow: 0 0 0px 100px #2e2e2e inset
+	&:hover textarea:-webkit-autofill:focus
+		border: 1px solid #fff
+		-webkit-text-fill-color: #7d7d7d
+		-webkit-box-shadow: 0 0 0px 100px #2e2e2e inset
+
+select:-webkit-autofill
+	border: 1px solid #7e7e7e
+	-webkit-text-fill-color: #7d7d7d
+	-webkit-box-shadow: 0 0 0px 100px #2e2e2e inset
+	&:hover, &:focus
+		border: 1px solid #7e7e7e
+		-webkit-text-fill-color: #7d7d7d
+		-webkit-box-shadow: 0 0 0px 100px #2e2e2e inset
 
 /* 2. BUTTON ================== */
 
@@ -132,15 +169,12 @@ label
 			font-weight: 500
 			line-height: 25px
 			text-transform: uppercase
-			// text-decoration: none
 .search-wrap
 	position: relative
 	display: inline-block
 	float: right
-	#header-searchbox
-		// position: relative
-		// float: right
-	::-webkit-search-cancel-button 
+	background: #242424
+	#header-searchbox ::-webkit-search-cancel-button 
 		-webkit-appearance: none
 	.btn-search 
 		margin: 15px 15px 0 0
@@ -151,9 +185,8 @@ label
 	.searchbox-input ,
 	.search-item
 		color: #b1aeae
-		padding: 13px 1px 13px 13px
-		width: 135px
-		// display: none
+		padding: 13px 1px 12px 13px
+		width: 136px
 		font-size: 12px
 		font-weight: 400
 		font-family: "Myriad Pro"
@@ -188,11 +221,12 @@ label
 			cursor: pointer
 			&:hover
 				color: $greencolor
-			// LOGIN or REGISTER style 
+
+// LOGIN or REGISTER style 
 .btn-login
 	display: inline-block
 	float: right
-	padding : 10px 23px
+	padding : 10px 20px
 	color: #7e7e7e
 	font-size: 11px
 	font-weight: 400
@@ -343,18 +377,18 @@ label
 #menu
 	background: #fff
 #nav
-	ul li	
+	.nav-list .nav-item,
+	.buy-list .buy-list-item
 		display: inline-block
 		padding: 21px 
 		border-right: 1px solid #eee
 		list-style-type: none
 		&:first-child
 			border-left: 1px solid #eee
-	& .nav-list
+	.nav-list
 		float: left
-		height: 60px
-		& li 
-			& a 
+		.nav-item 
+			a 
 				color: $maincolor 
 				font-size: 16px
 				font-weight: 400
@@ -363,13 +397,14 @@ label
 				&:hover 
 					color: $greencolor
 			& .active 
-				color: $greencolor		
-	& .buy-list
+				color: $greencolor	
+	#nav-toggle
+		display: none				
+	.buy-list
 		float: right
-		li:last-child
-			// position: fixed
+		.buy-list-item:last-child
 			border-right: 0px
-		& .wish-list 
+		.wish-list 
 			color: #000
 		& span 
 			color: #fff
@@ -390,53 +425,48 @@ label
 
 /* 5. CONTENT ================== */
 
-
-
-
 /* slider. ================== */
 #top-slider
 	position: relative
-	min-height: 460px
 	background: url('../img/bg-top-slider.png') no-repeat
-.slider-item
-	// width: 50%
-	position: relative
-	
-	& img
-		display: block
-		width: 100%
-		height: auto
-	// & .container
-	// 	position: absolute
-	// 	top: 0
-	// 	bottom: 0
-	// 	left: 50%
-	// 	width: 100%
-	// 	-ms-transform: translate(-50%,0)
-	// 	transform: translate(-50%,0)
-.slider-text
-	max-width: 386px
-	height: 400px
+	background-size: cover
+	.slider-top
+		max-width: 1400px
+		margin: 0 auto
+	.container
+		height: 460px
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -470px
+		// border: 1px solid red
+// .slider-item
+.slider-item .slider-img-small
+	display: none
+
+.baner-top
 	position: absolute
 	top: 50%
-	right: 5%
+	left: 50%
 	color: $maincolor
+	max-width: 390px
+	// float: right
+	// margin: 10px 15px
+	transform: translateY(-50%)
 	font-family: Aller
-	margin-top: -200px	
-	// transform: translate(0, -50%)
-	// -webkit-transform: translate(0, -50%)
-
-	& .title-text
+	// border: 1px solid #000
+	.baner-text
 		color: #242424
 		font-size: 40px
 		font-weight: 300
 		line-height: 40px	
-	& .description-slider 
+	.baner-description
 		margin: 4px 0 20px
 		font-size: 20px
 		font-weight: 300
 		line-height: 25px	
-.slider-price
+.baner-price,
+.product-price
 	display: inline-block
 	width: 68px
 	color: #fff
@@ -445,19 +475,20 @@ label
 	font-size: 13px
 	text-align: center
 	background: $greencolor			
-.action-menu li 
-	display: inline-block
-	margin-right: 2px
-	width: 40px
-	height: 40px
-	background: #fff
-	text-align: center
-	+vertical
+.action-menu
+	.action-item
+		display: inline-block
+		margin-right: 2px
+		width: 40px
+		height: 40px
+		background: #fff
+		text-align: center
+		+vertical
 
 .navigation
 	background: #2e2e2e
 	overflow: hidden
-	& ul 
+	.navigation-list 
 		position: relative
 		max-width: 572px
 		padding: 0 5px
@@ -474,7 +505,7 @@ label
 			background-color: #000
 			z-index: -1
 			content: ' '
-		& li 
+		.navigation-item 
 			float: left
 			position: relative
 			width: 33.33%
@@ -497,7 +528,6 @@ label
 		font-size: 12px
 		line-height: 14px
 		padding: 30px 5px 23px
-		// text-decoration: none
 		cursor: pointer
 		&:hover strong
 			color: #fff
@@ -507,9 +537,8 @@ label
 			margin: 0 0 3px
 			font-size: 18px
 			line-height: 20px
-						
-
-	& .slick-active span:after 
+					
+	.slick-active span:after 
 		content: ''
 		position: absolute
 		background: #57c5a0
@@ -517,7 +546,7 @@ label
 		left: 0
 		top: 8px
 		height: 6px
-	& .slick-active 
+	.slick-active 
 		strong 
 			color: #fff
 
@@ -526,8 +555,8 @@ label
 	background: $maincolor
 	padding:  25px 0
 	& .offers-item
-		width: 31.7%
-		display: inline-block
+		width: 32%
+		float: left
 		margin-right: 2%
 		&:last-child
 			margin-right: 0
@@ -535,6 +564,8 @@ label
 		display: block
 		position: relative
 		text-align: center
+		& img
+			width: 100%
 		span
 			position: absolute
 			display: block
@@ -558,15 +589,14 @@ label
 	font-family: Aller, sans-serif
 	background: #ebe7df
 .products-content
-	& .products-title
+	.title-box
 		padding: 30px 0
-		// overflow: hidden
-		& h2
+		.catalog-title
 			display: inline-block
 			padding-top: 10px
 			font-size: 25px
 			font-weight: 300
-		& .btn-all
+		.btn-all
 			float: right		
 			color: #bcb5a7
 			padding: 12px 20px
@@ -574,17 +604,20 @@ label
 			font-weight: 700
 			border: 1px solid #bcb5a7
 			border-radius: 0 
+			&:hover
+				text-decoration: underline
 .product-list 
-	overflow: hidden
+	// overflow: hidden
+	font-size: 0
 	& .product-item
 		position: relative
 		width: 31.915%
 		float: left
 		display: block
-		margin: 0 2.129% 20px 0
+		margin: 0 2.128% 20px 0
 		background: #fff
 		overflow: hidden
-		&:last-child
+		&:nth-child(3n-3)
 			margin-right: 0
 		& img 
 			display: block		
@@ -595,19 +628,27 @@ label
 	padding-left: 90px
 	border-top: 1px solid #ccc
 	background: #fff
-	& .slider-price
+	.baner-price,
+	.product-price
 		position: absolute
 		bottom: 0
 		left: 10px
 		margin: 0
-	& .product-title
+	.product-title
 		color: $maincolor
 		font-size: 18px
 		line-height: 20px
 		font-weight: 400
 		padding : 10px 0 0 0
-	& .action-menu
+	.action-menu
 		display: none	
+		font-size: 0
+		.action-item
+			height: 47px
+			width: 25%
+			margin-right: 0
+			&:last-child
+				margin-right: 0
 	
 .product-sale
 	position: absolute
@@ -618,9 +659,7 @@ label
 	text-align: center
 	background-color: $maincolor
 	+vertical
-	// font-size: 13px
 	&.stock
-		// +vertical
 		background-color: #f27e4b
 	& span
 		display: inline-block
@@ -635,13 +674,12 @@ label
 .product-item:hover .product-title
 	display: none
 
-
-
 .post-content
 	margin: 30px 0
 	padding: 25px 0
 	border-top: 1px solid #bcb5a7
 	overflow: hidden
+	clear: both
 	& .post-item
 		min-height: 185px
 		float: left
@@ -657,7 +695,6 @@ label
 			margin-bottom: 15px
 			font-size: 14px
 			font-weight: 700
-			// line-height: 60px
 			text-transform: uppercase	
 		& p	
 			font-size: 12px
@@ -672,7 +709,6 @@ label
 		+clr
 		margin-bottom: 15px
 		.news-date
-			// display: inline-block
 			float: left
 			color: #fff
 			width: 36px
@@ -703,10 +739,10 @@ label
 	overflow: hidden
 .widget-item
 	float: left
-	margin-right: 6.629%
-	width: 29.187%
+	margin-right: 4%
+	width: 29%
 	&.widget-flickr
-		width: 28.373%
+		width: 28%
 		margin-right: 0
 	& .widget-title 
 		color: #7d7d7d
@@ -734,35 +770,13 @@ label
 				
 	& .flickr-item
 		float: left
-		width: 30.3%
-		margin: 0 2.7% 9px 0
+		width: 75px
+		margin: 0 5px 5px 0
+		&:nth-child(3n+1)
+			margin-right: 0
 		& img
 			display: block
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .col-1
-// 	float: left
-// 	width: 251px
-// 	margin-right: 53px
-// 	border: 1px solid #fff
-// 	box-sizing: border-box
-// .col-1:last-child
-// 	margin-right: 0
-// .col-2
-// 	width: 244px	
+			width: 100%	
 
 /* social ================== */
 #social
@@ -830,7 +844,7 @@ label
 .footer-nav
 	display: inline-block
 	float: right
-	& li 
+	.nav-item 
 		float: left
 		margin-right: 5px
 		color: #acacac
@@ -852,9 +866,402 @@ label
 				text-decoration: underline
 
 
-/* 7. MEDIA ================== */
+/* 7. style for product page ================== */
+		/* baner-product ================== */
+#baner-product
+	position: relative
+	min-height : 260px
+	background: url('../img/bg-baner-product.png') repeat-x
+	.baner-details
+		min-height : 260px
+		max-width: 1400px
+		margin: 0 auto
+		background: url('../img/bg-baner-details.png') no-repeat
+	.baner-top 
+		.baner-price
+			float: left
+			margin-right: 20px
+
+			margin-top: 6px
+#shop-catalog
+	height: 90px
+	background: #2e2e2e
+	.catalog-title
+		height: 90px
+		width: 24%
+		+vertical
+		text-align: center
+		display: block
+		float: left
+		// margin-right: 20px
+		vertical-align: middle
+		color: #ffffff
+		font-size: 22px
+		font-weight: 400
+		line-height: 25px
+
+.catalog-select
+	
+	width: 23%
+	height: 60px
+	margin-top: 15px
+	margin: 15px 0  0 2%
+	color: #ffffff
+	font-family: Aller
+	font-size: 18px
+	font-weight: 400
+	line-height: 25px
+	border: none
+	outline: none
+	// text-align-last: center
+	// text-align: center
+	background-color: #242424
+	background: #242424 url('../img/icon-catalog.png') no-repeat
+	background-position: 90% 23px
+	cursor: pointer
+select
+	text-align-last: center
+	text-align: center
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none	
+	border: none
+	outline: none	
+
+#catalog
+	.title-box
+		.catalog-title
+			display: inline-block			
+		.breadcrumbs-block
+			display: inline-block
+			margin-left: 10px
+			.breadcrumbs-list
+				display: inline-block	
+		
+				.breadcrumbs-item
+					color: #bcb5a7
+					font-size: 12px
+					font-weight: 700
+					line-height: 25px
+					&:after
+						content: '>'
+						display: inline-block
+						margin: 0 5px
+					&:hover
+						text-decoration: underline	
+				&:last-child .breadcrumbs-item:after
+					display: none
+	.view-bloc
+		float: right	
+		.title-view
+			color: #bcb5a7
+			font-size: 14px
+			font-weight: 700
+			line-height: 25px	
+		.view-button
+			padding: 8px
+			margin-left: 5px
+			border: 1px solid #bcb5a7
+			background-color: #ebe7df		
+			&:hover
+				background: #bcb5a7
+		.sort-product
+			width: 200px
+			height: 34px
+			margin-left: 20px
+			color: #bcb5a7
+			font-size: 14px
+			font-weight: 700
+			line-height: 25px
+			border: 1px solid #bcb5a7
+			// background-color: #ebe7df
+			background:  #ebe7df url('../img/icon-sort.png') no-repeat
+			background-position: 95% 8px
+/* 8. MEDIA ================== */
+
+
+@media ( min-width: 1200px )
+	.container
+		width: 1140px
+	#top-slider
+		.container
+			margin-left: -570px	
+
+
+@media ( max-width: 992px ) 
+	.container
+		width: 760px
+	#top-slider
+		.container
+			margin-left: -380px	
+	.post-content .post-item
+		min-height: 220px		
+	.widget-item
+		margin-right: 3%			
+	.widget-item.widget-flickr
+		width: 35%
+	
 
 
 
+@media (max-width: 768px) 
+	.container
+		width: 100%
+		.row
+			// padding: 0
+			margin: 0	
+	#top-slider
+		.container
+			margin-left: -50%
+	#nav .nav-list .nav-item, 
+	#nav .buy-list .buy-list-item
+		padding: 12px
+	// .widget-item .flickr-item
+	// 	width: 47%
+	// 	margin: 0
+	// 	margin-bottom: 5px
+	// 	&:nth-child(2n+2)
+	// 		margin-right: 6%
+	#special-offers .offers-item a span
+		padding: 16px 10px
+		font-size: 20px
+	.product-details .product-title
+		display: none
+	.product-details .action-menu
+		display: block		
+	.shipping,
+	.twitter-widget
+		display: none
+	.post-content .post-item
+		width: 32%
+		margin-right: 3%
+	.post-content .post-item.post-large
+		width: 65%
+	.widgets-wrap, .social-wrap
+		padding: 15px 15px 10px 15px	
+	.widget-item
+		width: 42%	
+	.widget-item.widget-flickr
+		width: 43%
+		float: right
+	
+	// style for page product
+	#shop-catalog 
+		.catalog-title
+			width: 23%
+	#catalog 
+		.view-bloc
+			float: none
+			margin-top: 30px
+			text-align: center	
+			.sort-product
+				margin-left: 0
+@media (max-width: 640px) 
+	.product-list .product-item
+		float: none
+		margin: 0 auto
+		margin-bottom: 30px
+		width: 70%
+		&:last-child
+			margin: auto
+	.search-wrap .searchbox-icon
+		background-position: 0 -572px
+	.nav-list
+		display: none		
+	#nav #nav-toggle
+		display: block
+		position: relative
+		float: left
+		padding: 0 30px
+		height: 44px
+		border: solid #eee
+		border-width: 0 1px
+		cursor: pointer
 
+		&.active .nav-arrow
+			background-color: transparent
+			&:before, &:after
+				top: 0
+			&:before
+				transform: rotate(45deg)
+				-webkit-transform: rotate(45deg)
+				-ms-transform: rotate(45deg)
+			&:after
+				transform: translateY(-10px) rotate(-45deg)
+				-webkit-transform: translateY(-10px) rotate(-45deg)
+				-ms-transform: translateY(-10px) rotate(-45deg)
+				top: 10px
+		.nav-arrow
+			position: relative
+			top: 12px
+			height: 3px
+			width: 20px
+			background: #6b6b6b
+			cursor: pointer
+			display: inline-block
+			content: ''
+			&:before, &:after
+				cursor: pointer
+				height: 3px
+				width: 20px
+				background: #6b6b6b
+				position: absolute
+				display: block
+				content: ''
+			&:before
+				top: -6px
+			&:after
+				bottom: -6px
+				transition: all 500ms ease-in-out
+				-webkit-transition: all 500ms ease-in-out
+				-moz-transition: all 500ms ease-in-out
+				-o-transition: all 500ms ease-in-out
+			&:before, &:after
+				transition: all 500ms ease-in-out
+				-webkit-transition: all 500ms ease-in-out
+				-moz-transition: all 500ms ease-in-out
+				-o-transition: all 500ms ease-in-out
+	#nav 
+		position: relative
+		.nav-list		
+			float: none
+			position: absolute	
+			background: #fff
+			z-index: 999	
+			top: 44px
+			.nav-item
+				display: block		
+				padding: 10px 30px
+				border-bottom: 1px solid #eee
+				&:first-child
+					border-left: 0px
+					border-top: 1px solid #eee
+		.search-wrap
+			float: left
+			position: absolute
+			min-width: 60px
+	.slider-item
+		min-height: 360px
+		.slider-img-small
+			display: block
+			width: 100%
+		.slider-img-big
+			display: none	
+	.navigation span
+		padding: 30px 0px 23px	
+	#top-slider .container
+		height: 340px
+		.baner-top
+			left: 25%
+	.product-list
+		// overflow: visible		
+		overflow: hidden
+	.widget-item.widget-flickr
+		width: 49%	
+	.product-list .product-item:nth-child(3n-3)
+		margin: 0 auto
+		margin-bottom: 30px
+	#catalog .view-bloc 
+		.title-view,
+		.view-button
+			display: none
+	// stule fpr product page
+	.baner-top
+		left: 3%	 
+		.baner-text
+			font-size: 26px
+		.baner-description
+			font-size: 16px		
+	#shop-catalog .catalog-title
+		width: 14%
+		font-size: 14px
+	.catalog-select
+		width: 26%
+		font-size: 14px			
+@media (max-width: 540px)
+	#special-offers .offers-item
+		width: 100%
+		a
+			width: 55%
+			margin: 0 auto	
+			margin-bottom: 20px
+	.widget-item.widget-flickr
+		width: 55%		
+	.social-wrap
+		text-align: center
+	.social-link
+		float: none	
+		width: 222px
+		margin: 0 auto
+		margin-top: 35px
+	.footer-nav
+		float: none
+		width: 320px
+		margin: 0 auto
+		display: block
+		.nav-item
+			font-size: 11px		
+	#footer .copyright
+		float: none
+		display: block
+		text-align: center
+		clear: both
+	
 
+@media (max-width: 480px) 
+	#top-slider .container
+		padding: 0
+		.baner-top
+			left: 3%
+	.baner-top .baner-text
+		font-size: 32px
+	.baner-top .baner-description
+		font-size: 15px		
+	.product-list .product-item
+		width: 100%
+	.btn-login
+		padding: 10px 12px
+	.navigation span
+		font-size: 11px
+		strong
+			font-size: 16px		
+	#special-offers .offers-item a
+		width: 75%	
+	.products-content .title-box .btn-all
+		float: none
+		display: block
+		width: 125px
+		margin: 0 auto
+		margin-top: 15px
+	.products-content .title-box .catalog-title
+		display: block
+		text-align: center	
+		font-size: 20px
+	.post-content .post-item,
+	.post-content .post-item.post-large
+		width: 100%	
+		margin-top: 30px
+	.widget-item,
+	.widget-item.widget-flickr
+		text-align: center
+		width: 100%
+		margin-right: 0
+		margin-top: 30px
+	.widget-item .flickr-item
+		width: 32%
+		margin: 0
+		margin-right: 2%
+		margin-bottom: 5px
+		&:nth-child(3n+1)
+			margin-right: 0
+	.footer-nav .nav-item
+		font-size: 10px
+	// style for product page
+	#shop-catalog 
+		height: 130px
+		.catalog-title
+			width: 100%
+			height: 40px
+		.catalog-select
+			width: 30%
+			background-position: 50% 42px
