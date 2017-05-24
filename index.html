@@ -7,7 +7,7 @@
 	<title>Foose Shoes</title>
 	<link rel="stylesheet" type="text/css" href="css/slick.css" />
 	<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<!--[if lt IE 9]><script src="js/html5.js?ver1.0"></script><![endif]-->		
 </head>
@@ -93,7 +93,7 @@
 				<div class="row">
 					<nav id="nav">
 						<ul class="nav-list">
-							<li class="nav-item"><a href="index.html" class="active">Home</a></li>
+							<li class="nav-item"><a href="index.html">Home</a></li>
 							<li class="nav-item"><a href="product.html">Products</a></li>
 							<li class="nav-item"><a href="#">About</a></li>
 							<li class="nav-item"><a href="#">Pages</a></li>
@@ -309,17 +309,49 @@
 					</div>
 					<div class="post-item post-large">
 						<h4 class="post-title">Blog news</h4>
-						<!--<div class="news-item">-->
-						<!--	<span class="news-date">Apr <span class="news-day">01</span></span>	-->
-						<!--	<h5>Nice &amp; clean. The best for you blog!</h5>-->
-						<!--	<p>Vivamus metus turpis, bibendum vitae euismod vel, vulputate vel </p>-->
-						<!--</div>-->
-						<!--<div class="news-item">-->
-						<!--	<span class="news-date">Apr <span class="news-day">01</span></span>	-->
-						<!--	<h5>What an Ecommerce theme!</h5>-->
-						<!--	<p>Vulputate vet nibh. Class aptent tacit sociosqu ad litora</p>-->
-						<!--</div>-->
-					<div id="change"></div>
+						<div class="news-show">
+							<div class="news-item">
+								<span class="news-date">Apr <span class="news-day">01</span></span>	
+								<h5>Nice &amp; clean. The best for you blog!</h5>
+								<p>Vivamus metus turpis, bibendum vitae euismod vel, vulputate vel </p>
+							</div>
+							<div class="news-item">
+								<span class="news-date">Apr <span class="news-day">02</span></span>	
+								<h5>What an Ecommerce theme!</h5>
+								<p>Vulputate vet nibh. Class aptent tacit sociosqu ad litora</p>
+							</div>
+						</div>
+						<div class="news-show">
+							<div class="news-item">
+								<span class="news-date">Apr <span class="news-day">03</span></span>	
+								<h5>Nice &amp; clean. The best for you blog!</h5>
+								<p>Vivamus metus turpis, bibendum vitae euismod vel, vulputate vel </p>
+							</div>
+							<div class="news-item">
+								<span class="news-date">Apr <span class="news-day">04</span></span>	
+								<h5>What an Ecommerce theme!</h5>
+								<p>Vulputate vet nibh. Class aptent tacit sociosqu ad litora</p>
+							</div>
+						</div>
+						<div class="news-show">
+							<div class="news-item">
+								<span class="news-date">Apr <span class="news-day">05</span></span>	
+								<h5>Nice &amp; clean. The best for you blog!</h5>
+								<p>Vivamus metus turpis, bibendum vitae euismod vel, vulputate vel </p>
+							</div>
+							<div class="news-item">
+								<span class="news-date">Apr <span class="news-day">06</span></span>	
+								<h5>What an Ecommerce theme!</h5>
+								<p>Vulputate vet nibh. Class aptent tacit sociosqu ad litora</p>
+							</div>
+						</div>
+						<div class="news-show">
+							<div class="news-item">
+								<span class="news-date">Apr <span class="news-day">07</span></span>	
+								<h5>Nice &amp; clean. The best for you blog!</h5>
+								<p>Vivamus metus turpis, bibendum vitae euismod vel, vulputate vel </p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -336,37 +368,27 @@
 					</div>
 					<div class="widget-item twitter-widget">
 						<h4 class="widget-title">TWITTER WIDGET</h4>
-						<div class="twitter-post">
-							<p><a href="#" class="twitter-posted">@ericafustero</a>Why thank you. Your work looks awesome by the way!<a href="#" class="twitter-posted"> @treemelody</a></p>
-							<span class="twitter-date">19 days ago</span>
-						</div>
-						<div class="twitter-post">
-							<p><a href="#" class="twitter-posted">roymarvelous </a> You can seek a refund through TF if it is not as advertised - but it is :) </p>
-							<span class="twitter-date">21 days ago</span>
-						</div>
-						<!-- <a class="twitter-timeline"  href="https://twitter.com/search?q=roymarvelous%20" data-widget-id="861859030649753600">Твіти про roymarvelous </a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
-
+						<a class="twitter-timeline" data-chrome="transparent noborders noheader nofooter noscrollbar"  data-width="450" data-height="180" data-theme="dark" data-link-color="#57c5a0" href="https://twitter.com/roymarvelous"></a> 
 					</div>
 					<div class="widget-item widget-flickr">
 						<h4 class="widget-title">FLICKR WIDGET</h4>
 						<div class="flickr-item">
-							<a href="img/flickr-1.jpg" data-fancybox data-caption="flickr 1">
+							<a href="img/flickr-1.jpg" data-fancybox >
 								<img src="img/flickr-1-small.jpg" alt=" flickr alt" />
 							</a>
 						</div>
 						<div class="flickr-item">
-							<a href="img/flickr-2.jpg" data-fancybox data-caption="flickr 2">
+							<a href="img/flickr-2.jpg" data-fancybox >
 								<img src="img/flickr-2-small.jpg" alt="flickr 2 alt" />
 							</a>
 						</div>
 						<div class="flickr-item">
-							<a href="img/flickr-3.jpg" data-fancybox data-caption="flickr 3">
+							<a href="img/flickr-3.jpg" data-fancybox >
 								<img src="img/flickr-3-small.jpg" alt=" flickr alt" />
 							</a>
 						</div>
 						<div class="flickr-item">
-							<a href="img/flickr-4.jpg" data-fancybox data-caption="flickr 4">
+							<a href="img/flickr-4.jpg" data-fancybox >
 								<img src="img/flickr-4.jpg" alt=" flickr alt" />
 							</a>
 						</div>
@@ -447,11 +469,10 @@
 			</div>
 		</footer>
 		<!-- FOOTER END -->
-
-
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/slick.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+		<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.fancybox.min.js"></script>
 		<script type="text/javascript" src="js/custom.js"></script>
 
 	</body>

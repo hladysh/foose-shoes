@@ -1,10 +1,10 @@
 
-$greencolor : #57c5a0
-$maincolor : #242424
 
 /* 1. MAIN ================== */
 
-//greed
+$greencolor : #57c5a0
+$maincolor : #242424
+
 $gutter: 10
 // $columns: 3
 
@@ -14,33 +14,11 @@ $gutter: 10
 	margin-right: auto
 	padding-left: $gutter + px
 	padding-right: $gutter + px
-	// border: 1px solid green
+
 	.row
 		margin-left: -$gutter + px
 		margin-right: -$gutter + px
 		+clr
-		// &>[class*="col-"]
-		// 	position: relative
-		// 	min-height: 1px
-		// 	float: left
-		// 	// padding-left: $gutter + px
-		// 	margin-right: $gutter + px
-		// 	box-sizing:border-box
-		// 	border: 1px solid red
-		// 	&:last-child
-		// 		padding-right: 0
-		// 		margin-right: 0
-			
-// @for $i from 1 through $columns
-// 	.col-#{$i}
-// 		width: ((100 / $columns) * $i) * 1%
-		
-// .text-left
-// 	text-align: left !important
-
-// .text-right
-// 	text-align: right !important
-
 
 /* 2. ICONS ================== */
 .ic 
@@ -54,7 +32,7 @@ $gutter: 10
 		+s(icon-#{$i})
 
 
-@each $i in eye,   share , cart, star, menu-star, menu-cart , search
+@each $i in eye, share , cart, star, menu-star, menu-cart , search
 	.ic-#{$i}	
 		+s(icon-#{$i})
 		&:hover 
@@ -65,11 +43,6 @@ $gutter: 10
 		+s(icon-#{$i})
 	.view-button:hover .ic-#{$i}
 		+s(icon-#{$i}-hover)
-// @each $i in menu-star, menu-cart 
-// 	.ic-#{$i}	
-// 		+s(icon-#{$i})
-// 	.buy-list li a:hover .ic-#{$i}
-// 		+s(icon-#{$i}-hover)
 
 @each $i in facebook, flickr, linkedin ,gplus, twitter
 	.ic-#{$i}	
@@ -78,7 +51,35 @@ $gutter: 10
 		+s(icon-#{$i}-hover)
 
 
+/*  BUTTON ================== */
 
+
+.btn, a.btn 
+	display: inline-block
+	vertical-align: middle
+	text-align: center
+	padding: 10px 20px 0
+	height: 40px
+	font: normal 14px/14px Arial, sans-serif
+	+tr(all 0.2s linear)
+	border-radius: 5px
+	background: transparent
+	border: none 
+
+input[type="submit"].btn, button.btn
+	padding-top: 0
+
+
+/*  FORM ================== */
+
+textarea
+	resize: none 
+	height: auto
+	min-height: 100px
+	padding-top: 10px
+
+label 
+	display: block
 
 input:-webkit-autofill
 	border: 1px solid #7e7e7e
@@ -107,53 +108,7 @@ select:-webkit-autofill
 		-webkit-text-fill-color: #7d7d7d
 		-webkit-box-shadow: 0 0 0px 100px #2e2e2e inset
 
-/* 2. BUTTON ================== */
-
-
-.btn, a.btn 
-	display: inline-block
-	vertical-align: middle
-	text-align: center
-	padding: 10px 20px 0
-	height: 40px
-	font: normal 14px/14px Arial, sans-serif
-	+tr(all 0.2s linear)
-	border-radius: 5px
-	background: transparent
-	border: none 
-
-input[type="submit"].btn, button.btn
-	padding-top: 0
-
-
-/* 3. FORM ================== */
-
-input[type="text"],
-input[type="password"],
-input[type="tel"],
-input[type="email"],
-textarea
-	// height: 20px
-	// padding: 0 15px
-	// font: normal 14px/14px Arial, sans-serif
-	// color: #000
-	// background: #fff 
-	// border: 1px solid #ccc
-	// &.form-control
-		// display: block
-		// width: 100%
-
-textarea
-	resize: none 
-	height: auto
-	min-height: 100px
-	padding-top: 10px
-
-label 
-	display: block
-
-
-/* 4. HEADER ================== */
+/*  HEADER ================== */
 #header 	
 	background-color: $maincolor
 .header-wrap
@@ -423,7 +378,7 @@ label
 				background: $greencolor
 
 
-/* 5. CONTENT ================== */
+/*  CONTENT ================== */
 
 /* slider. ================== */
 #top-slider
@@ -439,7 +394,6 @@ label
 		top: 0
 		left: 50%
 		margin-left: -470px
-		// border: 1px solid red
 // .slider-item
 .slider-item .slider-img-small
 	display: none
@@ -450,11 +404,8 @@ label
 	left: 50%
 	color: $maincolor
 	max-width: 390px
-	// float: right
-	// margin: 10px 15px
 	transform: translateY(-50%)
 	font-family: Aller
-	// border: 1px solid #000
 	.baner-text
 		color: #242424
 		font-size: 40px
@@ -607,7 +558,6 @@ label
 			&:hover
 				text-decoration: underline
 .product-list 
-	// overflow: hidden
 	font-size: 0
 	& .product-item
 		position: relative
@@ -673,14 +623,16 @@ label
 	display: block	
 .product-item:hover .product-title
 	display: none
-
+	// ????
+.news-show
+	display: none
 .post-content
 	margin: 30px 0
 	padding: 25px 0
 	border-top: 1px solid #bcb5a7
 	overflow: hidden
 	clear: both
-	.post-item
+	& .post-item
 		min-height: 185px
 		float: left
 		width: 23.5%
@@ -741,7 +693,7 @@ label
 	float: left
 	margin-right: 4%
 	width: 29%
-	.widget-flickr
+	&.widget-flickr
 		width: 28%
 		margin-right: 0
 	.widget-title 
@@ -755,19 +707,7 @@ label
 		color: #a4a4a4
 		font-size: 12px
 		font-style: italic
-		line-height: 16px	
-		& .twitter-posted
-			color: #57c5a0
-			&:hover
-				text-decoration: underline
-	.twitter-date
-		display: block
-		color: #c4c5bf
-		margin: 10px 0
-		font-size: 12px
-		font-style: italic
-		line-height: 18px
-				
+		line-height: 16px			
 	.flickr-item
 		float: left
 		width: 75px
@@ -777,7 +717,10 @@ label
 		& img
 			display: block
 			width: 100%	
-
+.twitter-widget
+	text-align: center
+.twitter-widget	> iframe
+	margin: 0 auto
 /* social ================== */
 #social
 	min-height: 100px
@@ -807,9 +750,7 @@ label
 	.mail-btn
 		width: 36px
 		height: 36px
-		// padding: 0
 		border: none
-		// margin-left: -39px
 		background: #7d7d7d	
 		&:hover
 			background: #606060
@@ -850,7 +791,6 @@ label
 		float: left
 		margin-right: 5px
 		color: #acacac
-		// opacity: 0.5
 		font-size: 12px
 		font-weight: 400
 		line-height: 25px
@@ -883,7 +823,6 @@ label
 		.baner-price
 			float: left
 			margin-right: 20px
-
 			margin-top: 6px
 #shop-catalog
 	height: 90px
@@ -895,7 +834,6 @@ label
 		text-align: center
 		display: block
 		float: left
-		// margin-right: 20px
 		vertical-align: middle
 		color: #ffffff
 		font-size: 22px
@@ -915,8 +853,6 @@ label
 	line-height: 25px
 	border: none
 	outline: none
-	// text-align-last: center
-	// text-align: center
 	background-color: #242424
 	background: #242424 url('../img/icon-catalog.png') no-repeat
 	background-position: 90% 23px
@@ -976,10 +912,9 @@ select
 			font-weight: 700
 			line-height: 25px
 			border: 1px solid #bcb5a7
-			// background-color: #ebe7df
 			background:  #ebe7df url('../img/icon-sort.png') no-repeat
 			background-position: 95% 8px
-/* 8. MEDIA ================== */
+/*  MEDIA ================== */
 
 
 @media ( min-width: 1200px )
@@ -1004,13 +939,15 @@ select
 		width: 35%
 	
 
+	// style for page product
+	.baner-top
+		left: 25%
 
 
 @media (max-width: 768px) 
 	.container
 		width: 100%
 		.row
-			// padding: 0
 			margin: 0	
 	#top-slider
 		.container
@@ -1018,12 +955,6 @@ select
 	#nav .nav-list .nav-item, 
 	#nav .buy-list .buy-list-item
 		padding: 12px
-	// .widget-item .flickr-item
-	// 	width: 47%
-	// 	margin: 0
-	// 	margin-bottom: 5px
-	// 	&:nth-child(2n+2)
-	// 		margin-right: 6%
 	#special-offers .offers-item a span
 		padding: 16px 10px
 		font-size: 20px
@@ -1155,8 +1086,7 @@ select
 		height: 340px
 		.baner-top
 			left: 25%
-	.product-list
-		// overflow: visible		
+	.product-list	
 		overflow: hidden
 	.widget-item.widget-flickr
 		width: 49%	
