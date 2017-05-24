@@ -1122,7 +1122,7 @@ label {
   margin-right: 4%;
   width: 29%;
 }
-.widget-item.widget-flickr {
+.widget-item .widget-flickr {
   width: 28%;
   margin-right: 0;
 }
@@ -1203,6 +1203,9 @@ label {
   height: 36px;
   border: none;
   background: #7d7d7d;
+}
+#mail-form .mail-btn:hover {
+  background: #606060;
 }
 
 .social-link {

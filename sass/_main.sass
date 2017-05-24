@@ -680,7 +680,7 @@ label
 	border-top: 1px solid #bcb5a7
 	overflow: hidden
 	clear: both
-	& .post-item
+	.post-item
 		min-height: 185px
 		float: left
 		width: 23.5%
@@ -705,7 +705,7 @@ label
 			font-size: 12px
 			margin-top: 10px
 			font-style: italic
-	& .news-item
+	.news-item
 		+clr
 		margin-bottom: 15px
 		.news-date
@@ -741,10 +741,10 @@ label
 	float: left
 	margin-right: 4%
 	width: 29%
-	&.widget-flickr
+	.widget-flickr
 		width: 28%
 		margin-right: 0
-	& .widget-title 
+	.widget-title 
 		color: #7d7d7d
 		margin-bottom: 20px
 		font-size: 14px
@@ -760,7 +760,7 @@ label
 			color: #57c5a0
 			&:hover
 				text-decoration: underline
-	& .twitter-date
+	.twitter-date
 		display: block
 		color: #c4c5bf
 		margin: 10px 0
@@ -768,7 +768,7 @@ label
 		font-style: italic
 		line-height: 18px
 				
-	& .flickr-item
+	.flickr-item
 		float: left
 		width: 75px
 		margin: 0 5px 5px 0
@@ -785,7 +785,7 @@ label
 
 #mail-form
 	display: inline-block	
-	& .mail-field
+	.mail-field
 		float: left 
 		color: #7d7d7d
 		width: 215px
@@ -804,13 +804,15 @@ label
 		&:focus
 			border: 1px solid #7d7d7d	
 			border-right: 0px
-	& .mail-btn
+	.mail-btn
 		width: 36px
 		height: 36px
 		// padding: 0
 		border: none
 		// margin-left: -39px
 		background: #7d7d7d	
+		&:hover
+			background: #606060
 .social-link
 	float: right
 	& li
@@ -833,7 +835,7 @@ label
 #footer 
 	padding: 30px 0
 	background: #2e2e2e
-	& .copyright
+	.copyright
 		float: left
 		& p
 			opacity: 0.5
