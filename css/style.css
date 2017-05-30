@@ -220,6 +220,8 @@ select:-webkit-autofill:hover, select:-webkit-autofill:focus { border: 1px solid
 .navigation .slick-active span:after { content: ""; position: absolute; background: #57c5a0; width: 100%; left: 0; top: 8px; height: 6px; }
 .navigation .slick-active strong { color: #fff; }
 
+.navigation .navigation-item:hover span:after { background: #57c5a0; }
+
 /* section special-offers ================== */
 #special-offers { background: #242424; padding: 25px 0; }
 #special-offers .offers-item { width: 32%; float: left; margin-right: 2%; }

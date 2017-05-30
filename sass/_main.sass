@@ -1,12 +1,8 @@
 
-
 /* 1. MAIN ================== */
-
 $greencolor : #57c5a0
 $maincolor : #242424
-
 $gutter: 10
-// $columns: 3
 
 .container
 	width: 940px
@@ -14,7 +10,6 @@ $gutter: 10
 	margin-right: auto
 	padding-left: $gutter + px
 	padding-right: $gutter + px
-
 	.row
 		margin-left: -$gutter + px
 		margin-right: -$gutter + px
@@ -472,6 +467,7 @@ select:-webkit-autofill
 				background: #2e2e2e
 				width: 2px
 				height: 6px
+	
 	& span
 		position: relative
 		display: block
@@ -482,6 +478,7 @@ select:-webkit-autofill
 		cursor: pointer
 		&:hover strong
 			color: #fff
+		
 		& strong 
 			display: block
 			color: #acacac
@@ -500,7 +497,9 @@ select:-webkit-autofill
 	.slick-active 
 		strong 
 			color: #fff
-
+// .navigation .navigation-list .navigation-item:after
+.navigation .navigation-item:hover span:after			
+	background: #57c5a0	
 /* section special-offers ================== */
 #special-offers 
 	background: $maincolor
